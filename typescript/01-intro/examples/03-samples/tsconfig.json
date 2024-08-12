@@ -1,0 +1,10 @@
+{
+    "compilerOptions": {
+        "module": "commonjs",
+        "sourceMap": true,
+        "outDir": "dist",
+        "lib": ["dom", "es2015"]
+    },
+    "include": ["./**/*.ts"],
+    "exclude": ["node_modules"]
+}
