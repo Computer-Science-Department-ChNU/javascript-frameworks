@@ -27,4 +27,6 @@ const someTestObj = {
 test2.call(someTestObj, 10, 20); // Встановлення контексту, варіант 1
 test2.apply(someTestObj, [30, 40]); // Встановлення контексту, варіант 2
 const newFunc = test2.bind(someTestObj); // Встановлення контексту, варіант 3
+//const newFunc = test2.bind(someTestObj, 60, 50); // Встановлення контексту, варіант 3
 newFunc(50, 60);
+//newFunc();

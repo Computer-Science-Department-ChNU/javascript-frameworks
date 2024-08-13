@@ -5,12 +5,12 @@
 // і після будь-якого блоку {}
 
 function var1() {
-    console.log(i); // undefined
+    console.log(i); // змінна i існує, але значення ще не присвоєно, тому - undefined
     console.log(test); // undefined
 
-    for (var i = 0; i < 10; i++) {
-        var test = i;
-    }
+    for (var i = 0; i < 10; i++) { // ініціалізація i
+        var test = i; // пере присвоєння змінних; область видимості для test - вся функція var1 з точки зору js
+    } // hoisting
 
     console.log(i); // 10
     console.log(test); // 9
@@ -35,7 +35,7 @@ var2();
 // setTimeout у результаті використовували одне значення
 function var3() {
     for (var i = 0; i < 5; i++) {
-        setTimeout(function () {
+        setTimeout(function () { // асинхронний код
             console.log(i);
         }, 10);
     }

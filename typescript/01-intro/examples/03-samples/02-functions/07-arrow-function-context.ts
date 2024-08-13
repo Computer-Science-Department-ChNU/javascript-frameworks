@@ -13,13 +13,24 @@ const settings = {
     displayName: 'test object',
 
     test1() {
-        // в даному випадку this вказує на об'єкт settings
-        repeatOperation(
-            3,
-            function () {
+        repeatOperation(3, function () {
                 console.log(this.displayName);
-            }.bind(this)
+            }
         );
+
+        // const self = this; - this буде зсилатись на контекст settings
+        // repeatOperation(3, function () {
+        //         console.log(self.displayName);
+        //     }
+        // );
+
+        // в даному випадку this вказує на об'єкт settings
+        // repeatOperation(
+        //     3,
+        //     function () {
+        //         console.log(this.displayName);
+        //     }.bind(this)
+        // );
     },
 
     test2() {

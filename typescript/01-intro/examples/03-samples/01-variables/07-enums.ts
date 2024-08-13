@@ -3,13 +3,15 @@
 // За замовчанням перерахування нумерують
 // свої елементи починаючи з 0
 
-// Red = 0, Green = 1, Blue = 2
+// Red = 0, Green = 1, Blue = 2 - ключі перечислення
 enum Color {
     Red,
     Green,
     Blue,
 }
-const c1: Color = Color.Green;
+
+//const c1: Color = Color.Green;
+const c1: number = Color.Green; // але number - обширне поняття, тому вказувати треба Color
 console.log(c1);
 
 // кожному елементу перерахування явно встановлюється значення
@@ -47,39 +49,41 @@ function drawImage1(fruit: number) {
 
     switch (fruit) {
         case 0:
-            domElement.src = '/images/apple.jpg';
+            domElement.src = '../images/apple.jpg';
             break;
         case 1:
-            domElement.src = '/images/orange.jpg';
+            domElement.src = '../images/orange.jpg';
             break;
         case 2:
-            domElement.src = '/images/tomato.jpg';
+            domElement.src = '../images/tomato.jpg';
             break;
     }
 
     document.body.appendChild(domElement);
 }
 
-drawImage1(2); // створити зображення з яблуком (не очевидно)
+drawImage1(2); // створити зображення з яблуком (не очевидно), 2 - magic numbers!!! do not use this params - bad code!
 
+// Перепишемо drawImage1 з використанням enum
 enum Fruit {
     Apple,
     Orange,
     Tomato,
 }
 
+// Такий код є декларативним та сам говорить за себе, зо він робить
 function drawImage2(fruit: Fruit) {
     const domElement: HTMLImageElement = document.createElement('img');
 
     switch (fruit) {
         case Fruit.Apple:
-            domElement.src = '/images/apple.jpg';
+            domElement.src = '../images/apple.jpg';
             break;
         case Fruit.Orange:
-            domElement.src = '/images/orange.jpg';
+            domElement.src = '../images/orange.jpg';
             break;
         case Fruit.Tomato:
-            domElement.src = '/images/tomato.jpg';
+            domElement.src = '../images/tomato.jpg';
             break;
     }
 
@@ -87,3 +91,17 @@ function drawImage2(fruit: Fruit) {
 }
 
 drawImage2(Fruit.Apple); // створити зображення апельсина (код, що самодокументується)
+
+function drawImage3(fruit: Fruit) {
+    const fruitImages: { [key in Fruit]: string } = {
+        [Fruit.Apple]: '../images/apple.jpg',
+        [Fruit.Orange]: '../images/orange.jpg',
+        [Fruit.Tomato]: '../images/tomato.jpg',
+    };
+
+    const domElement: HTMLImageElement = document.createElement('img');
+    domElement.src = fruitImages[fruit];
+    document.body.appendChild(domElement);
+}
+
+drawImage3(Fruit.Orange)

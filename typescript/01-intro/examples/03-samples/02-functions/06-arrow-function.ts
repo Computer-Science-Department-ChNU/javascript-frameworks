@@ -18,3 +18,4 @@ const myFunc = (callback: (x: number) => number): void => {
 }
 
 myFunc(x => x + 1)
+//myFunc(x => 'String') - error

@@ -1,6 +1,8 @@
+// Примітиви
+
 // Boolean
 let isDone: boolean = false;
-// isDone = 1; // Type 'number' is not assignable to type 'boolean'
+//isDone = 1; // Type 'number' is not assignable to type 'boolean'
 
 console.log(isDone);
 

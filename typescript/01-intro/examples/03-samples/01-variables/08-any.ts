@@ -16,4 +16,4 @@ someValue.toFixed();
 // Помилка на етапі виконання
 // TypeError: someValue.toFixed is not a Function
 // someValue = 'test';
-// someValue.toFixed();
+// someValue.toFixed(); - буде помилка лиш у консолі браузера
