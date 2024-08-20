@@ -92,6 +92,17 @@ function drawImage2(fruit: Fruit) {
 
 drawImage2(Fruit.Apple); // створити зображення апельсина (код, що самодокументується)
 
+// У TypeScript, запис key in Fruit
+// використовується для створення об'єкта з
+// обмеженим набором ключів, де кожен ключ є значенням з типу Fruit.
+
+// [key in Fruit] означає, що ключами об'єкта fruitImages
+// можуть бути тільки значення, визначені в Fruit (тобто "Apple", "Orange", "Tomato" в даному прикладі).
+
+// Таким чином, структура { [key in Fruit]: string } означає,
+// що об'єкт fruitImages має ключі, кожен з яких є значенням з Fruit,
+// а значення кожного ключа — це рядок (string).
+
 function drawImage3(fruit: Fruit) {
     const fruitImages: { [key in Fruit]: string } = {
         [Fruit.Apple]: '../images/apple.jpg',
