@@ -12,3 +12,11 @@ const y: [number, string, string] = [1, 'hello', 'world']; // кортеж на 
 console.log(y[2]);
 
 // y[0].toLowerCase(); // Property 'toLowerCase' does not exist on type 'number'.
+
+type HTTPResponse1 = [number, string];
+const response: HTTPResponse1 = [404, 'Page is not found'];
+
+type HTTPResponse2 = [number, string?];
+
+const response1: HTTPResponse2 = [500];
+const response2: HTTPResponse2 = [201, 'Created'];
