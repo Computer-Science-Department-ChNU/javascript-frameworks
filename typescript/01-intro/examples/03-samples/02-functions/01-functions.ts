@@ -1,3 +1,42 @@
+// Function Declaration - функція, оголошена в основному потоці коду.
+// Function Expression - оголошення функції в контексті будь-якого виразу, наприклад присвоювання.
+
+// Function Declaration
+function sum1(a: number, b: number) {
+    return a + b;
+}
+
+// Function Expression
+const sum2 = function (a: number, b: number) {
+    return a + b;
+}
+
+// Обидва ці оголошення кажуть інтерпретатору:
+// «оголоси змінну sum1, створи функцію із зазначеними параметрами та кодом і збережи її в sum».
+// Основна відмінність між ними: функції, оголошені як Function Declaration, створюються інтерпретатором до виконання коду.
+
+sayHi("Дмитро"); // Привіт, Дмитро
+
+function sayHi(name: string) {
+    console.log("Привіт, " + name);
+}
+
+// А якби це було оголошення Function Expression, то такий виклик би не спрацював:
+
+sayHi2("Дмитро"); // помилка!
+
+const sayHi2 = function (name) {
+    console.log("Привіт, " + name);
+}
+
+// Висновок:
+// На відміну від оголошень Function Declaration,
+// які створюються заздалегідь, до виконання коду,
+// оголошення Function Expression створюють функцію,
+// коли до них доходить виконання.
+// Завдяки цій властивості Function Expression можна (і навіть потрібно)
+// використовувати для умовного оголошення функції.
+
 // звичайна функція
 function add1(x, y) {
     return x + y;
