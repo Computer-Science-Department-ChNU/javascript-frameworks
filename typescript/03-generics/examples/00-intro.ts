@@ -62,3 +62,11 @@ function f1<T>(p1: T): T {
 
     return v1;
 }
+
+class Animal<T> {
+    constructor(readonly id?: T) {}
+}
+
+let bird: Animal<string> = new Animal('bird'); // Ok -> bird: Animal<string>
+let fish = new Animal('fish'); // Ok -> fish: Animal<string>
+let insect = new Animal(); // Ok -> insect: Animal<unknown>
