@@ -1,23 +1,51 @@
 interface Report {
     name: string;
+    body?: string;  // body is optional
+    type: string;
+    url: string;
     build: () => string;
+    toJSON: () => string;
 }
 
-// implements - ключове слово для реалізації інтерфейсу у класі
-// якщо члени інтерфейсу не будуть визначені в класі, компілятор видасть помилку
 class DailyReport implements Report {
-    name: string = 'Daily Report';
+    readonly body: ReportBody | null;
+    name: string;
+    readonly type: string;
+    readonly url: string;
 
     build(): string {
         return 'some daily report data';
     }
+
+    toJSON(): string {
+        return JSON.stringify({
+            name: this.name,
+            body: this.body,
+            type: this.type,
+            url: this.url,
+            data: this.build(),
+        });
+    }
 }
 
 class WeaklyReport implements Report {
-    name: string = 'Weakly Report';
+    readonly body: ReportBody | null;
+    name: string;
+    readonly type: string;
+    readonly url: string;
 
     build(): string {
         return 'some weakly report data';
+    }
+
+    toJSON(): string {
+        return JSON.stringify({
+            name: this.name,
+            body: this.body,
+            type: this.type,
+            url: this.url,
+            data: this.build(),
+        });
     }
 }
 
