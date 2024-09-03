@@ -1,0 +1,14 @@
+{
+    "name": "typescript-fundamentals-lecture-2",
+    "version": "1.0.0",
+    "description": "TypeScript Fundamentals. Лекція 2. Classes and Interfaces",
+    "main": "index.js",
+    "scripts": {
+        "start": "tsc -w"
+    },
+    "author": "Computer Science Department ChNU",
+    "license": "ISC",
+    "devDependencies": {
+        "typescript": "^5.5.4"
+    }
+}
