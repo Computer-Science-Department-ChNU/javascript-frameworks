@@ -1,0 +1,14 @@
+{
+  "name": "typescript-fundamentals-lesson-4",
+  "version": "1.0.0",
+  "description": "TypeScript Fundamentals Лекція 3. Modules ans namespaces",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc -w"
+  },
+  "author": "Computer Science Department ChNU",
+  "license": "ISC",
+  "devDependencies": {
+    "typescript": "^5.5.4"
+  }
+}
