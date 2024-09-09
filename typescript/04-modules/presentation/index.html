@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <title>TypeScript Fundamentals</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <link rel="stylesheet" href="../../../core/styles/styles.css">
+    <style>
+        .shower {
+            --slide-ratio: calc(16 / 9);
+        }
+    </style>
+</head>
+<body class="shower list">
+
+<header class="caption">
+    <h1>TypeScript Fundamentals</h1>
+</header>
+
+<section class="slide">
+    <h2>Лекція 4. Модулі та простір імен</h2>
+    <h3>План лекції:</h3>
+    <ol>
+        <li>Використання просторів імен</li>
+        <li>Робота з модулями</li>
+        <li>Налаштування webpack</li>
+    </ol>
+</section>
+
+<section class="slide">
+    <h2>Простір імен</h2>
+    <p>
+        <b>Простір імен</b> - механізм для групування коду та визначення окремих областей видимості.
+    </p>
+    <img src="pictures/1.png" width="500">
+</section>
+
+<section class="slide">
+    <h2>Triple Slash Reference</h2>
+    <code>///&lt;reference path="validator.ts"&gt;</code>
+    <ul>
+        <li>Директива для TS компілятора</li>
+        <li>Визначає залежність для даного файлу</li>
+        <li>Вказується на початку файлу</li>
+    </ul>
+    <p>tsc --outFile app.js main.ts</p>
+    <p>Компілюємо main.ts і всі пов'язані файли в один файл app.js</p>
+</section>
+
+<section class="slide">
+    <h2>Модулі</h2>
+    <p><b>Модуль</b> - окремий файл зі своєю областю видимості. Змінні, функції, класи та інші
+        мовні конструкції, визначені в модулі, не доступні за його межами.</p>
+    <p>Файл, у якому на верхньому рівні перебуває <b>import</b> чи <b>export</b>, є модулем.</p>
+    <p>Залежності між модулями визначаються за допомогою ключового слова <b>import</b>.</p>
+    <p>Щоб імпортувати модулі, використовуються завантажувачі модулів, які відповідають
+        за знаходження модуля та його завантаження перед виконанням програми.</p>
+</section>
+
+<section class="slide">
+    <h2>Завантажувачі модулів</h2>
+    <p>Для завантаження модулів застосовуються спеціальні завантажувачі:</p>
+    <ul>
+        <li>CommonJS</li>
+        <li>SystemJS: універсальний завантажувач, який може застосовуватися для
+            модулів будь-якого типу
+        </li>
+        <li>RequireJS: використовує синтаксис, відомий як асинхронне
+            визначення модуля або asynchronous module definition(AMD - Asynchronous Module Definition)
+        </li>
+        <li>Browserify: використовує синтаксис CommonJS</li>
+    </ul>
+</section>
+
+<section class="slide">
+    <h2>Модулі</h2>
+    <p>TypeScript підтримує роботу з модулями. Модулі є концепцією, яка принесена стандартом
+        ES2015, проте в сучасних браузерах нативна підтримка модулів ще не реалізована.</p>
+    <p>Модулі
+        певною мірою схожі на простори імен: вони можуть укладати різні класи, інтерфейси,
+        функції, об'єкти. Також вони виділяються в окремі файли, що дозволяє зробити код
+        програми більш ясним і чистішим, і разом з тим використовувати модулі в інших
+        програмах.</p>
+    <p>Водночас модулі підключаються до програми не за допомогою тега <b>script</b>,
+        а за допомогою завантажувача модулів.</p>
+</section>
+
+<section class="slide">
+    <h2>Виконання import</h2>
+    <div class="columns two">
+        <img src="pictures/3.png" width="400">
+        <img src="pictures/4.png" width="300">
+    </div>
+    <br>
+    <img src="pictures/2.png" width="800">
+</section>
+
+<section class="slide">
+    <h2>Робота з модулями</h2>
+    <p>Основні способи визначення залежностей між модулями:</p>
+    <ul>
+        <li>AMD Modules</li>
+        <li>CommonJS</li>
+        <li>ES6 modules</li>
+    </ul>
+    <div class="columns two">
+        <img src="pictures/5.png" width="500">
+        <img src="pictures/6.png" width="260">
+    </div>
+</section>
+
+<section class="slide">
+    <h2>Робота з модулями</h2>
+    <p>Порівняння для трьох основних систем модулів JavaScript: CommonJS, AMD і ES Modules:</p>
+    <img src="pictures/8.png" width="700">
+</section>
+
+<section class="slide">
+    <h2>Webpack</h2>
+    <p><b>Webpack</b> – інструмент для збирання JS файлів у пакети з дотриманням правильного
+        порядку використання файлів. <a href="https://webpack.js.org/" target="_blank">https://webpack.js.org/</a></p>
+    <img src="pictures/7.png" alt="" width="600">
+</section>
+
+<section class="slide">
+    <h2 class="shout">Дякую за увагу!</h2>
+</section>
+
+<div class="progress"></div>
+
+<script src="../../../core/shower.js"></script>
+</body>
+</html>
+
