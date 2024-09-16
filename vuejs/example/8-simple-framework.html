@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple JS Framework</title>
+    <style>
+        .component {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+<div id="app"></div>
+
+<script>
+    function reactive(obj) {
+        const listeners = {};
+
+        function notify() {
+            Object.keys(listeners).forEach(key => {
+                listeners[key].forEach(listener => listener());
+            });
+        }
+
+        return new Proxy(obj, {
+            get(target, prop) {
+                if (prop === 'subscribe') {
+                    return (key, listener) => {
+                        if (!listeners[key]) {
+                            listeners[key] = [];
+                        }
+                        listeners[key].push(listener);
+                    };
+                }
+                return target[prop];
+            },
+            set(target, prop, value) {
+                target[prop] = value;
+                notify();
+                return true;
+            }
+        });
+    }
+
+    function createComponent(template, data) {
+        const state = reactive(data);
+        const app = document.querySelector('#app');
+
+        function render() {
+            const container = document.createElement('div');
+            container.className = 'component';
+            container.innerHTML = template(state);
+
+            const inputs = container.querySelectorAll('input');
+            inputs.forEach(input => {
+                input.addEventListener('input', (event) => {
+                    const key = input.getAttribute('data-model');
+                    state[key] = event.target.value;
+                });
+            });
+
+            return container;
+        }
+
+        function update() {
+            const existing = app.querySelector('.component');
+            const newComponent = render();
+
+            if (existing) {
+                const focusedElement = document.activeElement;
+                const focusedElementId = focusedElement.id;
+
+                app.replaceChild(newComponent, existing);
+
+                if (focusedElementId) {
+                    const newFocusedElement = newComponent.querySelector(`#${focusedElementId}`);
+                    if (newFocusedElement) {
+                        newFocusedElement.focus();
+                    }
+                }
+            } else {
+                app.appendChild(newComponent);
+            }
+        }
+
+        state.subscribe('message', update);
+
+        document.addEventListener('DOMContentLoaded', update);
+
+        return {
+            mount(selector) {
+                update();
+            }
+        };
+    }
+    
+    const MyComponent = createComponent(
+        state => `
+        <div>
+          <input id="message-input" type="text" data-model="message" placeholder="Enter text" value="${state.message}" />
+          <p>Your message: ${state.message}</p>
+        </div>
+      `,
+        {message: ''}
+    );
+
+    MyComponent.mount('#app');
+</script>
+</body>
+</html>
