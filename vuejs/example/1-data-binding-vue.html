@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue 3 Example</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+<body>
+<div id="app">
+    <h1>
+        Двостороння прив'язка даних (v-model) дозволяє автоматично оновлювати текст на сторінці без додаткових
+        маніпуляцій з DOM. Vue.js автоматично оновлює DOM, коли змінюється стан даних, без необхідності вручну писати
+        код для обробки подій.
+    </h1>
+    <label>
+        <input v-model="message" placeholder="Введіть текст">
+    </label>
+    <p>{{ message }}</p>
+</div>
+
+<script>
+    const {createApp, ref} = Vue
+
+    createApp({
+        setup() {
+            const message = ref()
+
+            return {
+                message
+            }
+        }
+    }).mount('#app')
+</script>
+</body>
+</html>

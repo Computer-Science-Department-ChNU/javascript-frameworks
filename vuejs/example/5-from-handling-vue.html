@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Handling with Vue</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+<body>
+<ul>
+    <li>У цьому прикладі використовується двостороння прив'язка через v-model для поля введення.</li>
+    <li>Подія submit обробляється за допомогою директиви @submit.prevent, що дозволяє уникнути перезавантаження
+        сторінки.
+    </li>
+    <li>Vue.js автоматично оновлює привітання через реактивну змінну greeting.</li>
+</ul>
+<div id="app">
+    <form @submit.prevent="submitForm">
+        <label for="name">Ваше ім'я:</label>
+        <input v-model="name" type="text" id="name"/>
+        <button type="submit">Відправити</button>
+    </form>
+    <p v-if="greeting">{{ greeting }}</p>
+</div>
+
+<script>
+    const {createApp, ref} = Vue;
+
+    createApp({
+        setup() {
+            const name = ref('');
+            const greeting = ref('');
+
+            const submitForm = () => {
+                greeting.value = `Привіт, ${name.value}!`;
+            };
+
+            return {
+                name,
+                greeting,
+                submitForm
+            };
+        }
+    }).mount('#app');
+</script>
+</body>
+</html>

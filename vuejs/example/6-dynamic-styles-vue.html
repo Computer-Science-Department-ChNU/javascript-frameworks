@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Styles with Vue</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <style>
+        .highlight {
+            background-color: yellow;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+<ul>
+    <li>У Vue.js ми використовуємо директиву :class для умовного застосування класу highlight до елементу.</li>
+    <li>Реактивна змінна isHighlighted визначає, чи потрібно застосувати клас. Vue.js автоматично оновлює клас у DOM
+        залежно від стану змінної.
+    </li>
+    <li>Кнопка викликає функцію toggleHighlight, яка змінює значення змінної isHighlighted.</li>
+</ul>
+<div id="app">
+    <button @click="toggleHighlight">Змінити стиль</button>
+    <p :class="{ highlight: isHighlighted }">Цей текст змінює стиль</p>
+</div>
+
+<script>
+    const {createApp, ref} = Vue;
+
+    createApp({
+        setup() {
+            const isHighlighted = ref(false);
+
+            const toggleHighlight = () => {
+                isHighlighted.value = !isHighlighted.value;
+            };
+
+            return {
+                isHighlighted,
+                toggleHighlight
+            };
+        }
+    }).mount('#app');
+</script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loops with Vue</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+<body>
+<h1>
+    У Vue.js для циклів використовують директиву v-for, яка дозволяє відображати масив елементів у DOM.
+</h1>
+<div id="app">
+    <ul>
+        <li v-for="(item, index) in items" :key="index">{{ item }}</li>
+    </ul>
+    <h2>Vue.js автоматично відслідковує зміни в масиві та оновлює DOM, коли масив змінюється.</h2>
+    <!--    <input v-model="text">-->
+    <!--    <button @click="items.push(text)">Додати li</button>-->
+</div>
+
+<script>
+    const {createApp, ref} = Vue;
+
+    createApp({
+        setup() {
+            const text = ref();
+
+            const items = ref(['Item 1', 'Item 2', 'Item 3']);
+
+            return {
+                items
+            };
+        }
+    }).mount('#app');
+</script>
+</body>
+</html>

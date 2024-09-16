@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Styles with JS</title>
+    <style>
+        .highlight {
+            background-color: yellow;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+<h1>
+    Ми додаємо або видаляємо клас highlight
+    при натисканні на кнопку. Це виконується вручну
+    через методи classList.add та classList.remove.
+</h1>
+<button id="toggleButton">Змінити стиль</button>
+<p id="text">Цей текст змінює стиль</p>
+
+<script>
+    const button = document.getElementById('toggleButton');
+    const text = document.getElementById('text');
+
+    let isHighlighted = false;
+
+    button.addEventListener('click', function () {
+        isHighlighted = !isHighlighted;
+        if (isHighlighted) {
+            text.classList.add('highlight');
+        } else {
+            text.classList.remove('highlight');
+        }
+    });
+</script>
+</body>
+</html>

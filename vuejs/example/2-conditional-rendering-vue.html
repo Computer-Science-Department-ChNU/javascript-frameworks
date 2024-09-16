@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conditional Rendering with Vue</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+<body>
+<div id="app">
+    <h1>
+        У Vue.js умовний рендеринг значно простіше реалізується за допомогою директиви v-if. Немає необхідності
+        безпосередньо маніпулювати DOM — Vue.js самостійно оновлює його, коли змінюється стан змінної isVisible.
+    </h1>
+    <button @click="isVisible = !isVisible">Toggle Visibility</button>
+    <p v-if="isVisible">Цей текст відображається умовно</p>
+</div>
+
+<script>
+    const {createApp, ref} = Vue;
+
+    createApp({
+        setup() {
+            const isVisible = ref(true);
+
+            return {
+                isVisible
+            };
+        }
+    }).mount('#app');
+</script>
+</body>
+</html>

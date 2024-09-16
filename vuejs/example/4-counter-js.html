@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Counter with JS</title>
+</head>
+<body>
+<div>
+    <button id="decrease">-</button>
+    <span id="counter-value">0</span>
+    <button id="increase">+</button>
+</div>
+
+<script>
+    let counter = 0;
+
+    const counterValue = document.getElementById('counter-value');
+    const increaseButton = document.getElementById('increase');
+    const decreaseButton = document.getElementById('decrease');
+
+    increaseButton.addEventListener('click', function () {
+        counter++;
+        counterValue.textContent = counter;
+    });
+
+    decreaseButton.addEventListener('click', function () {
+        counter--;
+        counterValue.textContent = counter;
+    });
+</script>
+</body>
+</html>

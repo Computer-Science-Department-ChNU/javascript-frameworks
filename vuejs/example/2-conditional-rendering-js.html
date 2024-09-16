@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conditional Rendering with JS</title>
+</head>
+<body>
+<h1>
+    Тут ми вручну додаємо слухач подій на кнопку, який змінює стиль відображення елементу абзацу, залежно від стану
+    isVisible. Це класичний підхід у чистому JavaScript для умовного рендерингу.
+</h1>
+<button id="toggle-button">Toggle Visibility</button>
+<p id="text">Цей текст відображається умовно</p>
+<script>
+    const button = document.getElementById('toggle-button');
+    const text = document.getElementById('text');
+
+    let isVisible = true;
+
+    button.addEventListener('click', function () {
+        isVisible = !isVisible;
+        text.style.display = isVisible ? 'block' : 'none';
+    });
+</script>
+</body>
+</html>

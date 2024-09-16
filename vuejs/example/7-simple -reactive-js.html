@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reactive Example in JS</title>
+</head>
+<body>
+<input type="text" id="inputField" placeholder="Введіть текст">
+<p id="output"></p>
+
+<script>
+    // Проста реалізація реактивності
+    function reactive(obj) {
+        // Об'єкт для зберігання функцій-слухачів для кожної властивості.
+        // Кожна властивість може мати декілька слухачів.
+        const listeners = {};
+
+        // Додаємо метод для підписки на зміни
+        // Метод додає слухача для певної властивості.
+        // Слухач буде викликаний при зміні цієї властивості.
+        obj.subscribe = function (prop, listener) {
+            if (!listeners[prop]) {
+                listeners[prop] = [];
+            }
+            listeners[prop].push(listener);
+        };
+
+        // Використовується для перехоплення доступу до властивостей об'єкта.
+        // Коли властивість змінюється,
+        // Proxy викликає всіх слухачів, підписаних на цю властивість.
+        return new Proxy(obj, {
+            get(target, prop) {
+                return target[prop];
+            },
+            set(target, prop, value) {
+                target[prop] = value;
+
+                // Викликаємо слухачів для властивості
+                if (listeners[prop]) {
+                    listeners[prop].forEach(listener => listener(value));
+                }
+
+                return true;
+            }
+        });
+    }
+
+    // Створення і використання реактивного об'єкта
+    const state = reactive({message: ''});
+
+    // Обробляємо зміну значення в полі вводу
+    const inputField = document.getElementById('inputField');
+    const output = document.getElementById('output');
+
+    // Підписуємось на зміни у state.message
+    state.subscribe('message', function (value) {
+        output.textContent = value;
+    });
+
+    // Оновлюємо state при введенні
+    inputField.addEventListener('input', function (event) {
+        state.message = event.target.value;
+    });
+</script>
+</body>
+</html>

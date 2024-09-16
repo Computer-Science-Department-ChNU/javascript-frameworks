@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Binding Example</title>
+</head>
+<body>
+<div id="app">
+    <label for="input-field">
+        <input type="text" id="input-field" placeholder="Введіть текст">
+    </label>
+    <p id="text-output"></p>
+</div>
+
+<script>
+    const inputField = document.getElementById('input-field');
+    const textOutput = document.getElementById('text-output');
+
+    inputField.addEventListener('input', function () {
+        textOutput.textContent = inputField.value;
+    });
+</script>
+</body>
+</html>

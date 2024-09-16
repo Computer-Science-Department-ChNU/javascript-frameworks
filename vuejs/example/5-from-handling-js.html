@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Handling with JS</title>
+</head>
+<body>
+<form id="myForm">
+    <label for="name">Ваше ім'я:</label>
+    <input type="text" id="name"/>
+    <button type="submit">Відправити</button>
+</form>
+<p id="greeting"></p>
+
+<script>
+    const form = document.getElementById('myForm');
+    const nameInput = document.getElementById('name');
+    const greeting = document.getElementById('greeting');
+
+    form.addEventListener('submit', function (event) {
+        event.preventDefault();
+        const name = nameInput.value;
+        // Значення поля зчитується вручну, а потім текст привітання оновлюється в DOM.
+        greeting.textContent = `Привіт, ${name}!`;
+    });
+</script>
+</body>
+</html>

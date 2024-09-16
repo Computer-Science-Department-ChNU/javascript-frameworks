@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loops with JS</title>
+</head>
+<body>
+<h1>
+    Класичний підхід у чистому JavaScript для створення списку елементів через перебір масиву items і додавання кожного
+    елементу в DOM через appendChild.
+</h1>
+<ul id="list"></ul>
+<script>
+    const list = document.getElementById('list');
+    const items = ['Item 1', 'Item 2', 'Item 3'];
+
+    items.forEach(item => {
+        const li = document.createElement('li');
+        li.textContent = item;
+        list.appendChild(li);
+    });
+</script>
+</body>
+</html>
