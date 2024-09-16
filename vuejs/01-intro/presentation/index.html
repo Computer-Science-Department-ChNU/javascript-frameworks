@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <title>Vue.js</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <link rel="stylesheet" href="../../../core/styles/styles.css">
+    <style>
+        .shower {
+            --slide-ratio: calc(16 / 9);
+        }
+    </style>
+</head>
+<body class="shower list">
+
+<header class="caption">
+    <h1>Знайомство з фреймворком Vue.js</h1>
+</header>
+
+<section class="slide">
+    <h2>Лекція 5. Знайомство з фреймворком Vue.js</h2>
+    <h3>План лекції:</h3>
+    <ol>
+        <li>Що таке Vue.js?</li>
+        <li>Історія створення Vue.js</li>
+        <li>Для чого використовують Vue.js?</li>
+        <li>DOM і Virtual DOM</li>
+        <li>Вибір IDE/редактора коду</li>
+        <li>Node.js, Vue CLI,</li>
+        <li>Підключення фреймворку Vue.js</li>
+        <li>Структура стартового застосунку Vue.js</li>
+    </ol>
+</section>
+
+<section class="slide">
+    <h2>Що таке Vue.js?</h2>
+    <p><b>Vue.js</b> — це фреймворк, який працює на JavaScript,
+        створений для розробки користувацьких інтерфейсів.
+        Він працює на базі звичайного HTML, CSS та JavaScript з
+        можливостями декларативно програмувати
+        користувацькі інтерфейси будь-якої складності на
+        основі компонентів.</p>
+    <img src="pictures/1.png" alt="">
+</section>
+
+<section class="slide">
+    <h2>Історія створення Vue.js</h2>
+    <div style="display: flex">
+        <div style="font-size: 16px;">
+            <p>Vue.js був створений у 2014 році Еваном Ю, колишнім
+                співробітником Google.</p>
+            <p>Коли Еван Ю працював в Google Creative Labs, в нього
+                виникла необхідність швидко побудувати прототип складного
+                інтерфейсу, і потрібен був інструмент, щоб уникнути
+                написання повторюваного HTML. React лише починався,
+                AngularJS та Backbone були занадто громіздкі для
+                прототипування, тому Еван створив свій фреймворк.
+                З того часу Vue.js еволюціонував і дозволяє писати не тільки
+                прототипи, а й складні вебзастосунки. Оригінальний реліз Vue
+                відбувся в грудні 2014 року. Інформація про проєкт було
+                розміщено на Hacker News, Echo JS в день початкового релізу.
+                За один день проєкт з'явився на перших сторінках цих сайтів.</p>
+        </div>
+        <img src="pictures/2.png" style="flex-shrink: 0" alt="">
+    </div>
+</section>
+
+<section class="slide">
+    <h2>Цікаві факти про Vue.js</h2>
+    <div class="columns two">
+        <div style="font-size: 17.5px;">
+            <p>Vue.js модульний, що дозволяє
+                розробникам використовувати лише ті частини
+                фреймворку, які їм потрібні, а це робить його
+                легким і ефективним.</p>
+            <p>Vue.js має велику й активну спільноту, яка надає
+                розробникам багато ресурсів, таких як навчальні
+                посібники, плагіни та бібліотеки.</p>
+            <p>Vue.js був прийнятий багатьма компаніями,
+                включаючи Alibaba, Xiaomi та GitLab, завдяки
+                його простоті використання та продуктивності.</p>
+        </div>
+        <div>
+            <img src="pictures/3.png" width="400" alt="">
+        </div>
+    </div>
+</section>
+
+<section class="slide">
+    <h2>Для чого використовують Vue.js?</h2>
+    <div style="font-size: 19px;">
+        <p><b>Основні функції Vue.js:</b> розробка
+            складних реактивних інтерфейсів,
+            декларативний рендеринг,
+            реалізація анімації за допомогою
+            CSS, зв’язування даних тощо.</p>
+        <p>Vue.js часто використовують в
+            проєктах, яким потрібно додати
+            реактивності, відображати
+            значення при введенні даних
+            користувачами.</p>
+        <p><b>Третя сфера застосування</b> – фронтенд блогів та
+            інших ресурсів на популярних CMS. З
+            використанням Vue.js можна створювати
+            динамічні інтерфейси. Вони реагують на
+            поведінку і адаптуються під кожного
+            користувача.</p>
+        <p>Завдяки маленькому розміру основної
+            бібліотеки фреймворк майже не навантажує
+            проєкти, в яких його використовують. Vue.js
+            відносять до прогресивних фреймворків. Його
+            легко масштабувати та застосовувати для
+            великих, високонавантажених односторінкових
+            застосунках</p>
+    </div>
+</section>
+
+<section class="slide">
+    <h2>DOM і Virtual DOM</h2>
+    <div style="display: flex">
+        <div style="font-size: 16px;">
+            <p>DOM — це деревоподібна структура, яка представляє
+                елементи вебсторінки та їхні зв’язки один з одним.
+                Віртуальний DOM — це концепція програмування на
+                JavaScript, яка використовується для ефективного
+                оновлення фактичної об’єктної моделі документа
+                (DOM) вебсторінки.</p>
+            <p>Віртуальний DOM служить посередником між кодом
+                JavaScript і DOM, що дає змогу швидше оновлювати
+                вебсторінку. Коли ви вносите зміни до вебсторінки за
+                допомогою JavaScript, віртуальний DOM спочатку
+                оновлює свою власну деревоподібну структуру, а потім
+                зміни відображаються у фактичному DOM. Цей підхід
+                більш ефективний, оскільки не вимагає оновлення
+                всього DOM щоразу, коли відбувається зміна. Натомість
+                оновлюється лише та частина DOM, яка була змінена</p>
+        </div>
+        <div>
+            <img src="pictures/4.png" width="350" alt="">
+        </div>
+    </div>
+</section>
+
+<section class="slide">
+    <h2>DOM і Virtual DOM</h2>
+    <p style="font-size: 16px; line-height: 1.2;">Подумайте про Virtual DOM як
+        про проєкт або чорнову
+        версію будинку. Ви можете
+        вносити зміни в проєкт, але
+        вони не будуть відображені в
+        фактичному будинку, доки ви
+        їх не передасте. Це економить
+        час і зусилля, оскільки ви
+        можете внести кілька змін до
+        проєкту, перш ніж застосувати
+        їх до будинку (<a href="https://medium.com/naukri-engineering/naukriengineering-virtual-dom-fa8019c626b"
+                          target="_blank">Medium: Virtual DOM</a>)</p>
+    <img src="pictures/5.png" alt="">
+</section>
+
+<section class="slide">
+    <h2>Вибір IDE/редактора коду</h2>
+    <ul>
+        <li>Visual Studio Community</li>
+        <li>Web Storm</li>
+        <li>PHP Storm</li>
+        <li>Visual Studio Code</li>
+    </ul>
+</section>
+
+<section class="slide">
+    <h2>Vue CLI (deprecated)</h2>
+    <div class="columns two">
+        <div style="font-size: 19px;">
+            <p>Щоб розпочати роботу з Vue.js, вам спочатку
+                потрібно створити новий проєкт. Один із
+                найпростіших способів зробити це —
+                використати Vue CLI: <a href="https://cli.vuejs.org/guide/cli-service.html"
+                                        target="_blank">cli-service</a>
+            </p>
+            <p>Vue CLI — інструмент командного рядка, який
+                допомагає швидко налаштувати новий проєкт
+                Vue.js із базовою файловою структурою та
+                певною конфігурацією за замовчуванням.</p>
+        </div>
+        <img src="pictures/6.png" alt="">
+    </div>
+</section>
+
+<section class="slide">
+    <h2>create-vue</h2>
+    <p>create-vue - The recommended way to start a Vite-powered Vue project (<a
+            href="https://github.com/vuejs/create-vue">create-vue</a>)/p>
+</section>
+
+<section class="slide">
+
+</section>
+
+<section class="slide">
+
+</section>
+
+<section class="slide">
+    <h2 class="shout">Дякую за увагу!</h2>
+</section>
+
+<div class="progress"></div>
+
+<script src="../../../core/shower.js"></script>
+</body>
+</html>
+
