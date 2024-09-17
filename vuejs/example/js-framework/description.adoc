@@ -1,0 +1,314 @@
+. Налаштування базової структуру проєкту.
+Створимо необхідні файли та структуру каталогів для розробки фреймворку.
++
+----
+project-root/
+
+index.html
+
+js/framework.js
+
+components/component1.js etc...
+
+routes/route1.js etc...
+----
+
+. Реалізація зв'язування даних - передбачає синхронізацію даних між об'єктами JavaScript і DOM.
+Створимо просту систему зв'язування даних, яка дозволить нам прив'язувати дані до елементів HTML і динамічно їх оновлювати.
++
+[source,js]
+----
+const data = { message: "Hello, Framework!" };
+const element = document.querySelector("#message");
+dataBind(element, "innerHTML", data, "message");
+----
+
+. Створення простої системи маршрутизації (роутинг).
+Маршрутизація необхідна для створення односторінкових додатків (SPA).
+Реалізувати базову систему маршрутизації, використовуючи об'єкт window.location для навігації між різними маршрутами.
++
+[source,js]
+----
+const routes = [
+    { path: "/", component: HomeComponent },
+    { path: "/about", component: AboutComponent },
+];
+
+function navigateTo(path) {
+    // Code to navigate to the specified route
+}
+----
++
+. Розробка архітектури компонентів.
+Архітектура на основі компонентів дозволить нам створювати багаторазові компоненти інтерфейсу користувача.
++
+[source,js]
+----
+class ButtonComponent {
+    constructor() {
+        // Component initialization logic
+    }
+
+    render() {
+        // Render the component
+    }
+}
+----
++
+[source,HTML]
+----
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Custom Framework SPA</title>
+    </head>
+<body>
+    <header>
+        <nav>
+        <ul>
+            <li><a href="#/">Home</a></li>
+            <li><a href="#/about">About</a></li>
+        </ul>
+        </nav>
+    </header>
+<main>
+<div id="app"></div>
+</main>
+<script src="js/framework.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
+----
++
+. Створення SPA-routes
++
+[source,js]
+----
+// app.js
+
+// Initialize the framework
+const app = new Framework();
+// Define SPA routes
+app.route('/', HomeComponent);
+app.route('/about', AboutComponent);
+// Start the application
+app.start();
+----
+
+. Створення SPA-компонентів
++
+[source,js]
+----
+// components/home.js
+
+class HomeComponent {
+    render() {
+        return `
+            <h1>Welcome to our SPA!</h1>
+            <p>This is the home page.</p>
+        `;
+    }
+}
+// components/about.js
+
+class AboutComponent {
+    render() {
+        return `
+            <h1>About Us</h1>
+            <p>We are the creators of this SPA.</p>
+        `;
+    }
+}
+
+// components/notfound.js
+
+class NotFoundComponent {
+    render() {
+        return `<h1>404 - Not Found</h1>`;
+    }
+}
+----
+
+. Реалізація маршрутизації та рендерингу компонентів
++
+
+[source,js]
+----
+// framework.js
+
+class Framework {
+    constructor() {
+        this.routes = {};
+    }
+    route(path, component) {
+        this.routes[path] = component;
+    }
+    start() {
+        const navigateTo = () => {
+            const path = window.location.hash.slice(1);
+            const component = this.routes[path] || NotFoundComponent; // Handle 404
+            const appContainer = document.querySelector('#app');
+            appContainer.innerHTML = new component().render();
+        };
+        window.addEventListener('hashchange', navigateTo);
+        navigateTo();
+    }
+}
+----
+
+. Додавання прив'язки даних
++
+
+[source,js]
+----
+// framework.js
+
+class Framework {
+    constructor() {
+        this.routes = {};
+    }
+    route(path, component) {
+        this.routes[path] = component;
+    }
+    start() {
+        const navigateTo = () => {
+            const path = window.location.hash.slice(1);
+            const component = this.routes[path] || NotFoundComponent;
+            const appContainer = document.querySelector('#app');
+            const instance = new component();
+            instance.bind(); // Initialize data bindings
+            appContainer.innerHTML = instance.render();
+        };
+        window.addEventListener('hashchange', navigateTo);
+        navigateTo();
+    }
+}
+----
+
+. Створення компонента зв'язування даних
++
+
+[source,js]
+----
+// components/databinding.js
+
+class DataBindingComponent {
+    constructor() {
+        this.data = {
+            message: "Hello, Data Binding!",
+        };
+    }
+    bind() {
+        // Establish data binding
+        const inputElement = document.querySelector('#input');
+        const outputElement = document.querySelector('#output');
+        inputElement.addEventListener('input', () => {
+            this.data.message = inputElement.value;
+        });
+        // Update the UI when the data changes
+        Object.defineProperty(this.data, 'message', {
+            get: () => this.data.message,
+            set: (newValue) => {
+                outputElement.textContent = newValue;
+            },
+        });
+    }
+    render() {
+        return `
+            <h1>Data Binding Example</h1>
+            <input id="input" type="text" value="${this.data.message}" />
+            <p id="output">${this.data.message}</p>
+        `;
+    }
+}
+
+// app.js
+
+// Add the DataBindingComponent route
+app.route('/databinding', DataBindingComponent);
+
+// framework.js
+class Framework {
+    constructor() {
+        this.routes = {};
+    }
+    route(path, component) {
+        this.routes[path] = component;
+    }
+    start() {
+        const navigateTo = () => {
+            const path = window.location.hash.slice(1);
+            const component = this.routes[path] || NotFoundComponent;
+            const appContainer = document.querySelector('#app');
+            const instance = new component();
+            instance.bind();
+            appContainer.innerHTML = instance.render();
+        };
+        const navigate = (path) => {
+            window.location.hash = path;
+            navigateTo();
+        };
+        window.addEventListener('hashchange', navigateTo);
+        navigateTo();
+        return {
+            navigate,
+        };
+    }
+}
+----
+
+. Проектування компонентів інтерфейсу користувача
++
+[source,js]
+----
+// components/button.js
+
+class ButtonComponent {
+    constructor(label, onClick) {
+        this.label = label;
+        this.onClick = onClick;
+    }
+    render() {
+        const button = document.createElement('button');
+        button.textContent = this.label;
+        button.addEventListener('click', this.onClick);
+        return button;
+    }
+}
+----
+
+. Імплементація компонентів у SPA
++
+[source,js]
+----
+// app.js
+
+// Create a reusable button instance
+const myButton = new ButtonComponent('Click Me', () => {
+    alert('Button Clicked!');
+});
+// Define a route that uses the button component
+app.route('/button-demo', () => {
+    return `
+        <h1>Button Demo</h1>
+        ${myButton.render()}
+    `;
+});
+----
+
+. Повторне використання компонентів у декількох маршрутах
++
+[source,js]
+----
+// app.js
+
+// Define another route that uses the button component
+app.route('/another-demo', () => {
+    return `
+        <h1>Another Demo</h1>
+        ${myButton.render()}
+    `;
+});
+----
