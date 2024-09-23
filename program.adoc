@@ -48,3 +48,10 @@ Tsconfig.json.
 . Директиви.
 Застосування директив.
 
+== Vue.js: Основи реактивності.
+
+. Options API vs Composition API
+. Основи реактивності
+. Що таке computed?
+. Різниця між computed і methods (Options API).
+. Приклад застосування.
