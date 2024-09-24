@@ -1,6 +1,6 @@
 import {ref, readonly} from 'vue'
 
-//Composables are created by using the same principles as in the setup() function.
+//Composable are created by using the same principles as in the setup() function.
 
 export default function useCounter() {
     const count = ref(0)
@@ -18,6 +18,10 @@ export default function useCounter() {
     }
 
     return {
+        // Змінну count можна змінити лише викликом
+        // методів increment, decrement, set або reset.
+        // Будь-які спроби змінити його безпосередньо не вийде,
+        // гарантуючи, що composable інкапсулює та контролює стан.
         count: readonly(count),
         increment,
         decrement,
