@@ -1,5 +1,7 @@
 import {ref, readonly} from 'vue'
 
+// https://ua.vuejs.org/guide/reusability/composables.html
+
 //Composable are created by using the same principles as in the setup() function.
 
 export default function useCounter() {
