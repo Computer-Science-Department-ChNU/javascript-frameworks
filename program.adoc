@@ -48,10 +48,31 @@ Tsconfig.json.
 . Директиви.
 Застосування директив.
 
-== Vue.js: Основи реактивності.
+== Vue.js: Основи роботи з компонентами: Options API, Composition, реактивність, computed.
 
-. Options API vs Composition API
 . Основи реактивності
+. Options API vs Composition API
 . Що таке computed?
+. Що таке methods (Options API)?
 . Різниця між computed і methods (Options API).
-. Приклад застосування.
+. Приклади застосування computed та methods.
+
+== Vue.js: Основи роботи з компонентами: props, event handling, watchers.
+. Реквізити: https://ua.vuejs.org/guide/components/props.html
+. Слоти. Приклад застосування слотів в компонентах.: https://ua.vuejs.org/guide/components/slots.html
+. Обробка подій: https://ua.vuejs.org/guide/essentials/event-handling.html
+. Події компонентів: https://ua.vuejs.org/guide/components/events.html
+. Спостерігачі: https://ua.vuejs.org/guide/essentials/watchers.html
+
+== Vue.js: Робота з формами, валідація форм, v-model з компонентами
+. Прив'язування елементів форми: https://vuejs.org/guide/essentials/forms.html
+. Модифікатори роботи форм.
+. Основи роботи з бібліотеками екосистеми Vue.js.
+. Валідація форм за допомогою бібліотеки VeeValidate
+. v-model з компонентами: https://ua.vuejs.org/guide/components/v-model.html
+
+== Vue.js: Маршрутизація
+. Як працює маршрутизація в SPA.
+. Встановлення та налаштування vue-router.
+. Методи vue-router.
+. Приклад роботи роутингу з vue-router.
