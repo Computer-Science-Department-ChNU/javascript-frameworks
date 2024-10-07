@@ -66,9 +66,9 @@ Tsconfig.json.
 Що таке emit?
 . Приклад роботи з emit та props.
 . Що таке watch?
-. Принцип роботи watch.
+Принцип роботи watch.
 . Що таке watchEffect?
-. Принцип роботи watchEffect.
+Принцип роботи watchEffect.
 
 . Реквізити: https://ua.vuejs.org/guide/components/props.html
 . Слоти.
