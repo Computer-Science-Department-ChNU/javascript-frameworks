@@ -58,13 +58,27 @@ Tsconfig.json.
 . Приклади застосування computed та methods.
 
 == Vue.js: Основи роботи з компонентами: props, event handling, watchers.
+
+. Реквізити.
+Що таке props?
+. Обробка подій.
+Події компонентів.
+Що таке emit?
+. Приклад роботи з emit та props.
+. Що таке watch?
+. Принцип роботи watch.
+. Що таке watchEffect?
+. Принцип роботи watchEffect.
+
 . Реквізити: https://ua.vuejs.org/guide/components/props.html
-. Слоти. Приклад застосування слотів в компонентах.: https://ua.vuejs.org/guide/components/slots.html
+. Слоти.
+Приклад застосування слотів в компонентах.: https://ua.vuejs.org/guide/components/slots.html
 . Обробка подій: https://ua.vuejs.org/guide/essentials/event-handling.html
 . Події компонентів: https://ua.vuejs.org/guide/components/events.html
 . Спостерігачі: https://ua.vuejs.org/guide/essentials/watchers.html
 
 == Vue.js: Робота з формами, валідація форм, v-model з компонентами
+
 . Прив'язування елементів форми: https://vuejs.org/guide/essentials/forms.html
 . Модифікатори роботи форм.
 . Основи роботи з бібліотеками екосистеми Vue.js.
@@ -72,6 +86,7 @@ Tsconfig.json.
 . v-model з компонентами: https://ua.vuejs.org/guide/components/v-model.html
 
 == Vue.js: Маршрутизація
+
 . Як працює маршрутизація в SPA.
 . Встановлення та налаштування vue-router.
 . Методи vue-router.
