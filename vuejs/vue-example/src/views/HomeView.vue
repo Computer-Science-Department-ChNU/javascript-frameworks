@@ -4,7 +4,6 @@ import {RouterLink} from "vue-router";
 
 <template>
   <main>
-    <h1>Options Api and Composition Api</h1>
     <ul>
       <li>
         <RouterLink to="/options">Options Api</RouterLink>
@@ -17,6 +16,21 @@ import {RouterLink} from "vue-router";
       </li>
       <li>
         <RouterLink to="/computed_options">Computed Options</RouterLink>
+      </li>
+      <li>
+        <RouterLink to="/props">Props</RouterLink>
+      </li>
+      <li>
+        <RouterLink to="/emit">Emit</RouterLink>
+      </li>
+      <li>
+        <RouterLink to="/emit-props">Emit+Props</RouterLink>
+      </li>
+      <li>
+        <RouterLink to="/watch">Watch</RouterLink>
+      </li>
+      <li>
+        <RouterLink to="/watch-effect">Watch Effect</RouterLink>
       </li>
     </ul>
   </main>

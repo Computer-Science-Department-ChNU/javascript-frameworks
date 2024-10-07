@@ -36,6 +36,31 @@ const router = createRouter({
             path: '/computed_options',
             name: 'computedOptions',
             component: () => import('../views/VueComputedOptions.vue')
+        },
+        {
+            path: '/props',
+            name: 'props',
+            component: () => import('../views/VueProps.vue')
+        },
+        {
+            path: '/emit',
+            name: 'emit',
+            component: () => import('../views/VueEmit.vue')
+        },
+        {
+            path: '/emit-props',
+            name: 'emitProps',
+            component: () => import('../views/VueEmitProps.vue')
+        },
+        {
+            path: '/watch',
+            name: 'watch',
+            component: () => import('../views/VueWatch.vue')
+        },
+        {
+            path: '/watch-effect',
+            name: 'watchEffect',
+            component: () => import('../views/VueWatchEffect.vue')
         }
     ]
 })
