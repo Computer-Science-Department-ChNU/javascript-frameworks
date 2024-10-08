@@ -32,6 +32,9 @@ import {RouterLink} from "vue-router";
       <li>
         <RouterLink to="/watch-effect">Watch Effect</RouterLink>
       </li>
+      <li>
+        <RouterLink to="/modal">Modal</RouterLink>
+      </li>
     </ul>
   </main>
 </template>

@@ -71,8 +71,6 @@ Tsconfig.json.
 Принцип роботи watchEffect.
 
 . Реквізити: https://ua.vuejs.org/guide/components/props.html
-. Слоти.
-Приклад застосування слотів в компонентах.: https://ua.vuejs.org/guide/components/slots.html
 . Обробка подій: https://ua.vuejs.org/guide/essentials/event-handling.html
 . Події компонентів: https://ua.vuejs.org/guide/components/events.html
 . Спостерігачі: https://ua.vuejs.org/guide/essentials/watchers.html
@@ -84,6 +82,8 @@ Tsconfig.json.
 . Основи роботи з бібліотеками екосистеми Vue.js.
 . Валідація форм за допомогою бібліотеки VeeValidate
 . v-model з компонентами: https://ua.vuejs.org/guide/components/v-model.html
+. Слоти.
+Приклад застосування слотів в компонентах.: https://ua.vuejs.org/guide/components/slots.html
 
 == Vue.js: Маршрутизація
 

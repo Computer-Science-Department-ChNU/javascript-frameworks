@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <title>Vue.js</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <link rel="stylesheet" href="../../../core/styles/styles.css">
+    <style>
+        .shower {
+            --slide-ratio: calc(16 / 9);
+        }
+    </style>
+</head>
+<body class="shower list">
+
+<header class="caption">
+    <h1>Основи роботи з компонентами: v-model, forms, slots.</h1>
+</header>
+
+<section class="slide">
+    <h2>Лекція 9. Основи роботи з компонентами: v-model, forms, slots.</h2>
+    <h3>План лекції:</h3>
+    <ol>
+        <li>Що таке слоти? Приклад застосування слотів в компонентах.</li>
+    </ol>
+</section>
+
+<section class="slide">
+    <h2>Що таке слоти? </h2>
+    <p>
+        У Vue 3 slot є потужною функцією для
+        створення компонентів і передачі вмісту між
+        ними.
+    </p>
+    <p>
+        Слоти дозволяють визначити заповнювач у
+        шаблоні компонента, який можна заповнити
+        вмістом із батьківського компонента.
+    </p>
+    <p>
+        Слоти є потужною функцією у Vue
+        3, яка дозволяє створювати гнучкі
+        компоненти для багаторазового
+        використання. Вони дозволяють
+        створити більш модульний код і
+        спрощують керування поведінкою
+        складних компонентів.
+    </p>
+</section>
+
+<section class="slide">
+    <h2>Що таке слоти? </h2>
+    <p>
+        Ми поговоримо про такі типи слотів:
+    </p>
+    <ul>
+        <li>default slot: Cлоти за замовчуванням дозволяють передавати вміст
+            до основної області вмісту компонента.
+        </li>
+        <li>named slot: Іменовані слоти дозволяють передавати вміст до
+            певного заповнювача в шаблоні компонента.
+        </li>
+        <li>named scoped slot: Іменовані масштабовані слоти дозволяють передавати
+            дані від батьківського компонента до дочірнього
+            компонента за допомогою іменованого слота.
+        </li>
+        <li>
+            dynamic slot name: Динамічні слоти дозволяють використовувати
+            обчислене (динамічне) значення як ім’я слотів
+        </li>
+    </ul>
+</section>
+
+<section class="slide">
+    <h2>Що таке слоти? </h2>
+
+</section>
+
+<section class="slide">
+    <h2 class="shout">Дякую за увагу!</h2>
+</section>
+
+<div class="progress"></div>
+
+<script src="../../../core/shower.js"></script>
+</body>
+</html>
+

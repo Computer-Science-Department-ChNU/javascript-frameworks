@@ -61,6 +61,11 @@ const router = createRouter({
             path: '/watch-effect',
             name: 'watchEffect',
             component: () => import('../views/VueWatchEffect.vue')
+        },
+        {
+            path: '/modal',
+            name: 'modal',
+            component: () => import('../views/VueModal.vue')
         }
     ]
 })
