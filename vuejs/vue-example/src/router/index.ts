@@ -66,6 +66,11 @@ const router = createRouter({
             path: '/modal',
             name: 'modal',
             component: () => import('../views/VueModal.vue')
+        },
+        {
+            path: '/slot',
+            name: 'slot',
+            component: () => import('../views/VueSlotExample.vue')
         }
     ]
 })

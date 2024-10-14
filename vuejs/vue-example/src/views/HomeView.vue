@@ -35,6 +35,9 @@ import {RouterLink} from "vue-router";
       <li>
         <RouterLink to="/modal">Modal</RouterLink>
       </li>
+      <li>
+        <RouterLink to="/slot">Slot</RouterLink>
+      </li>
     </ul>
   </main>
 </template>
