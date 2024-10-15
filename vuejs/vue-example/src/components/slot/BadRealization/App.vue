@@ -1,12 +1,16 @@
 <template>
+  <h1>Bad Realization</h1>
+  <hr>
   <UserList :users="usersList"/>
-  <!--  Замовник: Хочу теж список, але інший список...-->
+  <br>
+  <TodosList :todos="todosList"/>
 </template>
 
 <script setup lang="ts">
 import {ref} from "vue";
 import {loadUsers, loadTodos} from "@/api.js";
-import UserList from "@/components/slot/UserList.vue";
+import UserList from "@/components/slot/BadRealization/UserList.vue";
+import TodosList from "@/components/slot/BadRealization/TodosList.vue";
 
 const usersList = ref([]);
 const todosList = ref([]);

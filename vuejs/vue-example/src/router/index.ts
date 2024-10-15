@@ -68,9 +68,24 @@ const router = createRouter({
             component: () => import('../views/VueModal.vue')
         },
         {
-            path: '/slot',
-            name: 'slot',
-            component: () => import('../views/VueSlotExample.vue')
+            path: '/slot_base',
+            name: 'slot_base',
+            component: () => import('../views/VueSlotBase.vue')
+        },
+        {
+            path: '/slot_bad',
+            name: 'slot_bad',
+            component: () => import('../views/VueSlotBad.vue')
+        },
+        {
+            path: '/slot_dynamic_components',
+            name: 'slot_dynamic_components',
+            component: () => import('../views/VueSlotDynamicComponents.vue')
+        },
+        {
+            path: '/slot_good',
+            name: 'slot_good',
+            component: () => import('../views/VueSlotGood.vue')
         }
     ]
 })

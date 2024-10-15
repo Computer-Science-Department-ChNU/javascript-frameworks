@@ -6,7 +6,7 @@
 <script lang='ts' setup>
 
 import SlotExample from "@/components/slot/SlotExample.vue";
-import SlotApp from "@/components/slot/Slots/SlotApp.vue";
+import SlotApp from "@/components/slot/SlotsGood/App.vue";
 </script>
 
 <style lang='scss' scoped>

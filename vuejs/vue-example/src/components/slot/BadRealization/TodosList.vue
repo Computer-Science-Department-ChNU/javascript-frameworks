@@ -1,5 +1,4 @@
 <template>
-  <h2>Todos list</h2>
   <input type="search" v-model="filter">
   <hr>
   <ul>

@@ -4,18 +4,16 @@
   <ul>
     <li v-for="item in filteredItems" :key="item.id">
       <!--      <User :item="item"/>-->
+      <!--      <Todo :item="item"/>-->
       <component :is="itemComponent" :item="item"/>
     </li>
   </ul>
-  <h3>
-    <a href="https://ua.vuejs.org/guide/essentials/component-basics.html#dynamic-components" target="_blank">Динамічні
-      компоненти</a>
-  </h3>
 </template>
 
 <script setup lang="ts">
 import {computed, ref} from "vue";
-import User from "@/components/slot/User.vue";
+import User from "@/components/slot/DynamicComponents/User.vue";
+import Todo from "@/components/slot/DynamicComponents/Todo.vue";
 
 const props = defineProps({
   items: {

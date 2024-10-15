@@ -1,6 +1,5 @@
 <template>
-  <!--  <UserList :users="usersList"/>-->
-  <!--  Замовник: Хочу теж список, але інший список...-->
+  <h1>DynamicComponents</h1>
   <List :fields="['username', 'name']" :items="usersList" :itemComponent="User"/>
   <List :fields="['title']" :items="todosList" :itemComponent="Todo"/>
 </template>
@@ -9,9 +8,9 @@
 import {ref} from "vue";
 import {loadTodos, loadUsers} from "@/api.js";
 
-import List from "@/components/slot/List.vue";
-import User from "@/components/slot/User.vue";
-import Todo from "@/components/slot/Todo.vue";
+import List from "@/components/slot/DynamicComponents/List.vue";
+import User from "@/components/slot/DynamicComponents/User.vue";
+import Todo from "@/components/slot/DynamicComponents/Todo.vue";
 
 console.log(User)
 

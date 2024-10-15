@@ -36,7 +36,16 @@ import {RouterLink} from "vue-router";
         <RouterLink to="/modal">Modal</RouterLink>
       </li>
       <li>
-        <RouterLink to="/slot">Slot</RouterLink>
+        <RouterLink to="/slot_base">Slot Base App List</RouterLink>
+      </li>
+      <li>
+        <RouterLink to="/slot_bad">Slot Simple Bad Realization</RouterLink>
+      </li>
+      <li>
+        <RouterLink to="/slot_dynamic_components">Slot Dynamic Components Realization</RouterLink>
+      </li>
+      <li>
+        <RouterLink to="/slot_good">Slot Good Realization</RouterLink>
       </li>
     </ul>
   </main>
