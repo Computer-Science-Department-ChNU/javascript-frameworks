@@ -47,6 +47,9 @@ import {RouterLink} from "vue-router";
       <li>
         <RouterLink to="/slot_good">Slot Good Realization</RouterLink>
       </li>
+      <li>
+        <RouterLink to="/popup">Vue Popup with Slots</RouterLink>
+      </li>
     </ul>
   </main>
 </template>

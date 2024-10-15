@@ -87,6 +87,12 @@ const router = createRouter({
             name: 'slot_good',
             component: () => import('../views/VueSlotGood.vue')
         }
+        ,
+        {
+            path: '/popup',
+            name: 'popup',
+            component: () => import('../views/VuePopup.vue')
+        }
     ]
 })
 
