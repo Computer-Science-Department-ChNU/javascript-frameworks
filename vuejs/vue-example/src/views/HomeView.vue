@@ -50,6 +50,9 @@ import {RouterLink} from "vue-router";
       <li>
         <RouterLink to="/popup">Vue Popup with Slots</RouterLink>
       </li>
+      <li>
+        <RouterLink to="/simple_routing">Vue simple routing example</RouterLink>
+      </li>
     </ul>
   </main>
 </template>
