@@ -1,0 +1,64 @@
+= Лабораторна робота №8
+
+*Тема:* Керування маршрутами з використанням vue-router.
+
+*Мета:* ознайомлення з концепцією маршрутизації в односторінкових додатках (SPA) за допомогою бібліотеки vue-router.
+
+*Вимоги до звіту:*
+
+. Лабораторна робота повинна бути виконана *в окремій гілці* - feature/routing у vue-lottery-app github репозиторію студента.
+. При написанні застосунку, використати паттерн репозиторій (Repository).
+. Дотримання TypeScript-типізації;
+. Використання Composition Api або Options Api на вибір студента;
+. Під час написання застосунку, обов'язково дотримуватись https://ua.vuejs.org/style-guide/[style guide];
+. Якщо ви використовуєте css бібліотеку, то імпортуйте тільки необхідні стилі (базові, кнопки, таблиці, поля тощо).
+Виористовуйте scss.
+. Використовуйте Eslint;
+
+== Практична частина
+
+=== Самостійна робота студента:
+
+. https://vuejs.org/guide/scaling-up/routing.html[Routing];
+. https://vuejs.org/guide/essentials/lifecycle.html[Lifecycle Hooks];
+. https://vuejs.org/guide/components/async.html[Async Components];
+. https://router.vuejs.org/[The official router for Vue.js];
+. https://router.vuejs.org/guide/essentials/dynamic-matching.html[Dynamic Route Matching with Params];
+. https://router.vuejs.org/guide/essentials/route-matching-syntax.html[Routes' Matching Syntax];
+. https://router.vuejs.org/guide/essentials/nested-routes.html[Nested Routes];
+. https://router.vuejs.org/guide/essentials/active-links.html[Active links];
+. https://router.vuejs.org/guide/advanced/navigation-guards.html[Navigation Guards];
+. https://router.vuejs.org/guide/advanced/navigation-guards.html[Data Fetching];
+. https://medium.com/canariasjs/vue-api-calls-in-a-smart-way-8d521812c322[Vue API calls in a smart way];
+
+=== Завдання:
+
+** Виконати самостійну роботу студента.
+** Проаналізувати схеми даних для Users (https://fakeapi.platzi.com/en/rest/users/[Users Fake Api], https://api.escuelajs.co/docs[Swagger Docs]).
+
+Використовуючи застосунок vue-lottery-app, лабораторної роботи №7, виконати наступне:
+
+** Додати компонент <AppHeader>.
+** Додати до проекту vue-router.
+** Додати компонент <AppNavigation> з наступними розділами застосунку: Home, About, Lottery, Login.
+** Змінити та заповнити таблицю з учасниками використовуючи дані з https://fakeapi.platzi.com/en/rest/users/[Users Fake Api].
+** Реалізувати динамічний роутинг для users, щоб користувач міг отримати повну інформацію про юзера (/users/{id}).
+** Поля форм змінити у відповідності до https://fakeapi.platzi.com/en/rest/users/[Users Fake Api] (Create a user, Update a user).
+** Реалізувати авторизацію юзера на сторінці /login.
+Дані для авторизації використати з https://fakeapi.platzi.com/en/rest/auth-jwt/[Auth with JWT].
+Коли юзер авторизований, виводити кнопку з написом "Logout".
+Клік по "Logout" розлогінює юзера.
+** Для валідації форми використати бібліотеку https://vee-validate.logaretm.com/v4/[VeeValidate].
+** При написанні застосунку, використати паттерн репозиторій (Repository).
+
+Основні поняття та компоненти паттерну репозиторій:
+
+Репозиторій (Repository) - клас або інтерфейс, який надає методи для зберігання, отримання, оновлення та видалення об'єктів з бази даних або іншого джерела даних.
+Він приховує деталі роботи з базою даних від решти програми.
+
+Модель (Model) - об'єкт, який представляє дані, що зберігаються в базі даних або іншому джерелі даних.
+Модель може мати відповідність (mapping) до таблиці бази даних або іншої структури даних.
+
+Клієнтський код (Client Code) - решта застосунку, який використовує репозиторій для взаємодії з даними.
+Клієнтський код викликає методи репозиторія, а не безпосередньо взаємодіє з базою даних.
+

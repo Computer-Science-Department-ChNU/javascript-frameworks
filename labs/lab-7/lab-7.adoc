@@ -6,7 +6,7 @@
 
 *Вимоги до звіту:*
 
-. Лабораторна роба повинна бути виконана *в окремій гілці* - feature/split-on-components у vue-lottery-app github репозиторію студента.
+. Лабораторна робота повинна бути виконана *в окремій гілці* - feature/split-on-components у vue-lottery-app github репозиторію студента.
 . Поділ застосунку на компоненти;
 . Дотримання TypeScript-типізації;
 . Використання Composition Api або Options Api на вибір студента;
