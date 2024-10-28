@@ -158,6 +158,11 @@ const router = createRouter({
             path: '/pinia_cart',
             name: 'pinia_cart',
             component: () => import('../views/VuePiniaCart.vue')
+        },
+        {
+            path: '/axios',
+            name: 'axios',
+            component: () => import('../views/VueAxiosExample.vue')
         }
     ]
 })

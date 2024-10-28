@@ -59,6 +59,9 @@ import {RouterLink} from "vue-router";
       <li>
         <RouterLink to="/pinia_cart">Pinia Cart example</RouterLink>
       </li>
+      <li>
+        <RouterLink to="/axios">Axios example</RouterLink>
+      </li>
     </ul>
   </main>
 </template>
