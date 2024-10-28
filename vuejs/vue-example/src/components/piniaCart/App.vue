@@ -1,4 +1,3 @@
-<!--App component-->
 <template>
   <div class="cart-app">
     <ProductListComponent/>
