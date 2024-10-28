@@ -53,6 +53,12 @@ import {RouterLink} from "vue-router";
       <li>
         <RouterLink to="/simple_routing">Vue simple routing example</RouterLink>
       </li>
+      <li>
+        <RouterLink to="/pinia_store">Pinia Store example</RouterLink>
+      </li>
+      <li>
+        <RouterLink to="/pinia_cart">Pinia Cart example</RouterLink>
+      </li>
     </ul>
   </main>
 </template>
