@@ -91,3 +91,15 @@ Tsconfig.json.
 . Встановлення та налаштування vue-router.
 . Методи vue-router.
 . Приклад роботи роутингу з vue-router.
+
+== Vue.js: State manager Pinia
+
+. Для чого потрібен State Management.
+. Підключення Pinia.
+Огляд Pinia.
+
+== Vue.js: Axios. Робота з API
+
+. Що таке Axios
+. Підключення Axios
+. Робота з бібліотекою
