@@ -19,13 +19,13 @@
 . Пройти весь tutorial https://ua.vuejs.org/tutorial/#step-1 (Стиль API: Композиційний, SFC).
 Результат виконання кожного задання фіксувати у вигляді скріншоту з відповідним неймінгом (step-1.(jpg|png)).
 
-. Створіть новий проект Vue 3 за допомогою vue-create.
+. Створіть новий проєкт Vue 3 за допомогою vue-create.
 ** Виокристовуйте TypeScript з Композиційним API ( Add TypeScript?
 Yes).
 Що таке Композиційний API: https://ua.vuejs.org/guide/extras/composition-api-faq.html
 ** Використовуйте Eslint (Add ESLint for code quality?
 Yes).
-** Ознайомтесь з структурою стартового проекту.
+** Ознайомтесь зі структурою стартового проєкту.
 ** Під час написання застосунку, дотримуватись style guide - https://ua.vuejs.org/style-guide/
 
 . Створіть простий компонент який буде мати наступну структуру:
