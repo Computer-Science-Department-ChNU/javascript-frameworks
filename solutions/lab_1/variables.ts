@@ -1,6 +1,6 @@
 let myString: string = "Привіт!";
 let myNumber: number = 42;
-let myBoolean: boolean = true;
+let myBoolean: boolean | string = true;
 let myAny: any = "Можу бути будь-ким";
 
 console.log("Рядок:", myString);
