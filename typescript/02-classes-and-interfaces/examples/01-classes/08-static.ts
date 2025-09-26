@@ -21,7 +21,7 @@ class Database {
         return Database.instance;
     }
 
-    // методи для роботи з базою данних
+    // методи для роботи з базою даних
     public getData(): void {
         console.log('Received data from Database');
     }
@@ -41,4 +41,4 @@ db.getData();
 db.setData();
 
 const db2: Database = Database.getInstance();
-console.log('db === db2', db === db2); // якщо екземпляр класу один то маємо отримати true
+console.log('db === db2', db === db2); // якщо екземпляр класу один, то маємо отримати true

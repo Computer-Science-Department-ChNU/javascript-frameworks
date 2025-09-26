@@ -25,7 +25,7 @@ class Base {
 // клас Derived успадковує клас Base, клас Derived розширює клас Base
 class Derived extends Base {
     constructor() {
-        super(); // Виклик конструктора базового класу. Обов'язкова операція при наслідуванні.
+        super(); // Виклик конструктора базового класу. ОБОВ'ЯЗКОВА операція при наслідуванні!!
 
         // console.log('private property = ' + this.value1);
         console.log('public property = ' + this.value2);

@@ -17,3 +17,6 @@ someValue.toFixed();
 // TypeError: someValue.toFixed is not a Function
 // someValue = 'test';
 // someValue.toFixed(); - буде помилка лиш у консолі браузера
+
+//let val = JSON.parse('6')
+let val: string = JSON.parse('6')

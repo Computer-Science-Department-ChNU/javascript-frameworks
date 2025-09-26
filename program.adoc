@@ -1,4 +1,4 @@
-= Веб-технології (javaScript фреймворки)
+= Вебтехнології (javaScript фреймворки)
 :toc:
 :toc-title: Теми:
 :sectnums:
@@ -10,7 +10,7 @@
 . Компіляція коду TS.
 Tsconfig.json.
 . Змінні та типи даних.
-. Функції..
+. Функції.
 
 == TypeScript: Класи та інтерфейси.
 
@@ -27,7 +27,7 @@ Tsconfig.json.
 
 . Використання просторів імен.
 . Робота з модулями.
-. Налаштування webpack.
+. Налаштування webpack, vite.
 
 == Vue.js: Знайомство з фреймворком Vue.js.
 
@@ -91,3 +91,14 @@ Tsconfig.json.
 . Встановлення та налаштування vue-router.
 . Методи vue-router.
 . Приклад роботи роутингу з vue-router.
+
+== Vue.js: State manager Pinia
+
+. Для чого потрібен State Management.
+. Підключення Pinia.
+
+== Vue.js: Робота з REST API
+
+. Що таке REST API
+. Як викликати API та зовнішні сервіси
+. Обробка помилок
