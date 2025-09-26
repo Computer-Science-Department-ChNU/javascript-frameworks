@@ -1,4 +1,4 @@
-import {ValidatorSelector} from './validator-selector.js';
+import {ValidatorSelector} from './validator-selector';
 
 export class Validator {
     private config: Record<string, string>;

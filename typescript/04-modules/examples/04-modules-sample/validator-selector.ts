@@ -1,4 +1,4 @@
-import {RequiresValidator, NumberValidator, EmailValidators, ValidationStrategy} from './validator-strategies.js';
+import {RequiresValidator, NumberValidator, EmailValidators, ValidationStrategy} from './validator-strategies';
 
 export class ValidatorSelector {
     private static validators: { [id: string]: ValidationStrategy } = {};
