@@ -1,0 +1,22 @@
+src/
+├── api - абстракція транспортного шару
+├── assets/
+├── composables/ - використовується в різних модулях
+├── components/ - використовується в різних модулях
+├── constants.ts або constants/ (директорія)
+├── modules/
+|   ├── user/
+|   |   ├── pages/
+|   |   ├── components/
+|   |   ├── constants/
+|   |   ├── img/
+|   |   ├── ...
+|   ├── products/
+|   |   ├── pages/
+|   |   ├── components/
+|   |   ├── constants/
+|   |   ├── img/
+|   |   ├── ...
+├── lib (i.e. utils, helpers)
+├── App.vue
+├── main.ts
